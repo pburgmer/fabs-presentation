@@ -1,0 +1,131 @@
+// ****************************************************************************************************
+// general
+// ****************************************************************************************************
+
+// Core variables and mixins
+@import "twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap//variables";
+@import "twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/mixins";
+
+// Reset
+@import "twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/normalize";
+@import "twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/print";
+
+// Core CSS
+@import "twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/scaffolding";
+@import "twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/type";
+@import "twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/code";
+@import "twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/grid";
+@import "twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/buttons";
+
+// Utility classes
+@import "twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/utilities";
+@import "twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/responsive-utilities";
+
+// ****************************************************************************************************
+// w11k-slides config
+// ****************************************************************************************************
+
+$primaryColor: #2D5352;
+
+$headerLogo: url("assets/images/ETka-Logo-30px.png");
+$headerBorderColor: darken($primaryColor, 8%);
+
+$titleTopTextColor: white;
+$titleTopBackgroundColor: $primaryColor;
+$titleSeparatorColor: $headerBorderColor;
+$titleBottomTextColor: $primaryColor;
+$titleBottomBackgroundColor: transparent;
+
+
+@import "w11k-slides/dist/w11k-slides";
+
+.slide {
+//  h1 {
+//    color: $secondaryColor;
+//  }
+
+  h2:after {
+    background-size: initial;
+    width: 2.5em;
+  }
+}
+
+.slides.export {
+  font-size: 10px;
+
+  .img-responsive {
+    max-width: 10cm;
+    max-height: 10cm;
+  }
+}
+
+// ****************************************************************************************************
+// slides content
+// ****************************************************************************************************
+
+.slide.title {
+
+  padding: 0;
+
+  > div {
+    display: table;
+    width: 100%;
+    height: 100%;
+
+    > div {
+      display: table-row;
+
+      .top {
+        display: table-cell;
+        height: 38.2%;
+        text-align: center;
+        color: $titleTopTextColor;
+        background-color: $titleTopBackgroundColor;
+        padding: 0 2em;
+
+        .content {
+          position: relative;
+          top: 61.8%;
+          text-align: center;
+
+          h1 {
+            margin: 0;
+            color: $titleTopTextColor;
+            small {
+              color: $titleTopTextColor;
+            }
+          }
+        }
+      }
+
+      .bottom {
+        display: table-cell;
+        height: 61.8%;
+        border-top: 0.3em solid $titleSeparatorColor;
+        background-color: $titleBottomBackgroundColor;
+        padding: 0 2em;
+        h1 {
+          margin: 0;
+          color: $titleBottomTextColor;
+          small {
+            color: $titleBottomTextColor;
+          }
+        }
+
+        .content {
+          position: relative;
+          top: 38.2%;
+          text-align: center;
+        }
+      }
+    }
+
+  }
+}
+
+.slide.end {
+  color: $primaryColor;
+  a {
+    color: $primaryColor;
+  }
+}

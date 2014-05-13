@@ -1,0 +1,24 @@
+{
+  "author": "WeigleWilczek GmbH",
+  "name": "fabs-presentation",
+  "version": "1.0.0-SNAPSHOT",
+  "homepage": "http://www.weiglewilczek.com",
+  "description": "fabs Presentation",
+
+  "repository": {
+    "type": "git",
+    "url": "https://git.assembla.com/angularjs.fabs-presentation.git"
+  },
+
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "0.4.4",
+    "fabs": "0.5.3",
+    "lodash": "2.2.1"
+  },
+
+  "engines": {
+    "node": ">=0.10.21"
+  }
+  
+}
