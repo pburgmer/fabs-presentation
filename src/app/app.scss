@@ -27,7 +27,7 @@
 
 $primaryColor: #2D5352;
 
-$headerLogo: url("assets/images/ETka-Logo-30px.png");
+$headerLogo: url("assets/images/ET_Ka-Logo_white.svg");
 $headerBorderColor: darken($primaryColor, 8%);
 
 $titleTopTextColor: white;
@@ -45,8 +45,8 @@ $titleBottomBackgroundColor: transparent;
 //  }
 
   h2:after {
-    background-size: initial;
-    width: 2.5em;
+    background-size: 3.5em;
+    width: 4em;
   }
 }
 
@@ -85,7 +85,7 @@ $titleBottomBackgroundColor: transparent;
 
         .content {
           position: relative;
-          top: 61.8%;
+          top: 50%;
           text-align: center;
 
           h1 {
