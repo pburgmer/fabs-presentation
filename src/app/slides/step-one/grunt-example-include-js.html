@@ -1,0 +1,37 @@
+<div class="slide grunt-example-include-js centered">
+  <div>
+    <div class="header">
+      <h2>
+        Include JavaScript Files<br/>
+        <small>with Custom Task</small>
+      </h2>
+    </div>
+    <div class="content">
+<pre w11k-pretty-print lang="js">
+var indexHtmlTask = function () {
+  var jsFiles = utils.filterForJS(this.filesSrc);
+
+  grunt.file.copy('src/index.html', 'build-output/index.html', {
+    process: function (contents) {
+      return grunt.template.process(contents, { data: { scripts: jsFiles }});
+    }
+  });
+};
+
+grunt.registerMultiTask('indexHtml', 'Process index.html template', indexHtmlTask);
+</pre>
+
+<pre w11k-pretty-print lang="html">
+&lt;% scripts.forEach(function ( file ) { %&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;%= file %&gt;&quot;&gt;&lt;/script&gt;
+&lt;% }); %&gt;
+</pre>
+
+<pre w11k-pretty-print lang="js">
+indexHtml: {
+  dev: { files: ['js/**.*.js', '!js/**/*.test.js'] }
+}
+</pre>
+    </div>
+  </div>
+</div>

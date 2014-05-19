@@ -1,0 +1,31 @@
+<div class="slide grunt-example-livereload centered">
+  <div>
+    <div class="header">
+      <h2>
+        Shorten Dev-Lifecycle<br/>
+        <small>with LiveReload</small>
+      </h2>
+    </div>
+    <div class="content">
+<pre w11k-pretty-print lang="js">
+var grunt = require('grunt');
+
+module.exports = function () {
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+
+  grunt.registerTask('dev', ['watch', 'connect:server']);
+  grunt.registerTask('default', ['dev']);
+
+  grunt.initConfig({
+    watch: {
+      src: {
+        files: ['js/**/*.js', '!js/**/*.test.js']
+      }
+    },
+    connect: { server: { options: { port: 9000 }}}});
+};
+</pre>
+    </div>
+  </div>
+</div>

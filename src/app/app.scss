@@ -61,11 +61,35 @@ $titleBottomBackgroundColor: transparent;
   }
 }
 
+pre.prettyprint {
+  font-size: 0.7em;
+}
+
 // ****************************************************************************************************
-// slides content
+// w11k-slides bugfixes
 // ****************************************************************************************************
 
-.slide.title {
+li pre.prettyprint.linenums {
+  margin: 10px 0;
+}
+pre.prettyprint.linenums ol.linenums>li:before {
+  margin: 0;
+}
+
+code {
+  background-color: $lineColor;
+}
+
+.slides.export .slide {
+  border: 1px solid red;
+  border-width: 0;
+}
+
+// ****************************************************************************************************
+// slides types
+// ****************************************************************************************************
+
+.slide.titled {
 
   padding: 0;
 
@@ -82,14 +106,6 @@ $titleBottomBackgroundColor: transparent;
       top: 61.8%;
       @include transform(translateY(-61.8%));
       text-align: center;
-
-      h1 {
-        margin: 0;
-        color: $titleTopTextColor;
-        small {
-          color: $titleTopTextColor;
-        }
-      }
     }
   }
 
@@ -105,32 +121,26 @@ $titleBottomBackgroundColor: transparent;
       top: 38.2%;
       @include transform(translateY(-38.2%));
       text-align: center;
-
-      h1 {
-        margin: 0;
-        color: $titleBottomTextColor;
-        small {
-          color: $titleBottomTextColor;
-        }
-      }
     }
   }
 }
 
 .slide.centered {
   @include vcenter;
+  padding: 1em;
 
   > div {
     display: inline-block;
     margin: auto;
-    text-align: left;
+    text-align: center;
+    max-height: 90%;
 
     .header {
       background: none;
       border: 0;
 
-      margin: 0 0 1.5em;
-      padding: 0 0.5em;
+      margin: 0;
+      padding: 0;
 
       h2 {
         text-align: center;
@@ -143,9 +153,115 @@ $titleBottomBackgroundColor: transparent;
       }
     }
 
-    h3 {
-      color: inherit;
-      padding-left: 0.77em;
+    .content {
+      text-align: left;
+      max-height: 90%;
+      display: inline-block;
+
+      h3 {
+        color: inherit;
+        padding-left: 0.77em;
+      }
+    }
+
+    .header + .content {
+      margin-top: 1.5em;
+    }
+
+  }
+}
+
+.slides.screen .slide.centered {
+  .content {
+    .screenshot {
+      width: 35em;
+    }
+  }
+}
+
+.slides.export .slide.centered {
+  .content {
+    .screenshot {
+      height: 12cm;
+      max-height: none;
+      max-width: none;
+    }
+  }
+}
+
+// ****************************************************************************************************
+// slides content
+// ****************************************************************************************************
+
+.slide.title {
+  .top {
+    h1 {
+      margin: 0;
+      color: $titleTopTextColor;
+      small {
+        color: $titleTopTextColor;
+      }
+    }
+  }
+
+  .bottom {
+    h1 {
+      margin: 0;
+      color: $titleBottomTextColor;
+      small {
+        color: $titleBottomTextColor;
+      }
+    }
+  }
+}
+
+.slide.intro-tooling {
+  .row {
+    margin-bottom: 1em;
+  }
+
+  .tool {
+    display: table;
+    text-align: center;
+
+    div.logo {
+      display: table-cell;
+      height: 9em;
+      vertical-align: middle;
+
+      a {
+        img {
+          max-height: 6em;
+          max-width: 6em;
+          margin: auto;
+          display: block;
+          font-weight: bold;
+        }
+      }
+
+      a:after {
+        display: block;
+      }
+    }
+
+
+    div.description {
+      display: table-row;
+    }
+  }
+}
+
+.slide.meet-the-speaker {
+  .bottom {
+    h2 {
+      color: $titleBottomTextColor;
+      margin-bottom: 1em;
+      text-transform: uppercase;
+    }
+
+    h2:after {
+      content: '';
+      display: none;
     }
   }
 }
