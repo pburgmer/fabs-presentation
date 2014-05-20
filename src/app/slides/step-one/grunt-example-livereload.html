@@ -14,16 +14,12 @@ module.exports = function () {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
-  grunt.registerTask('dev', ['watch', 'connect:server']);
+  grunt.registerTask('dev', ['watch', 'connect:dev']);
   grunt.registerTask('default', ['dev']);
 
   grunt.initConfig({
-    watch: {
-      src: {
-        files: ['js/**/*.js', '!js/**/*.test.js']
-      }
-    },
-    connect: { server: { options: { port: 9000 }}}});
+    watch: { src: { files: ['js/**/*.js', '!js/**/*.test.js'] }},
+    connect: { dev: { options: { port: 9000 }}}});
 };
 </pre>
     </div>

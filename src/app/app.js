@@ -36,9 +36,10 @@ angular.module('app').constant('slidesConfig', {
     'fabs/about',
     'fabs/features',
     'fabs/demo',
+    'fabs/problems',
 
     'perspective/gulp',
-    'perspective/broccoli',
+    'perspective/gulp-example',
 
     'conclusion',
 

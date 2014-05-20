@@ -6,6 +6,9 @@ module.exports = {
     less: {
       enabled: false
     },
+    bless: {
+      enabled: false
+    },
     spec: {
       runInPrepare: false
     },
